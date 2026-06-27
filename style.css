@@ -1,0 +1,127 @@
+*{
+     margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    background: #f7f7f7;
+    font-family: 'Barlow Condensed', sans-serif;
+    padding-top: 4rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* padding-top: 4rem; */
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    max-width: 100vw;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1100;
+    background: #f7f7f7;
+    border-bottom: 1px solid rgba(75, 75, 75, 0.95);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.grid {
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    transition: .3s;
+    border: 1px solid #ccc;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.08);
+}
+
+.image-box {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.category {
+    color: #777;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 10px;
+    min-height: 65px;
+}
+
+.product-description {
+    color: #3f3f3f;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.price-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.new-price { 
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #4f46e5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+button:hover {
+    background: #372fd4;
+}
