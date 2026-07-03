@@ -15,31 +15,35 @@
 <body>
     <header id="navBar">
         <nav>
-            <!-- LEFT SIDE -->
             <div class="logo">
-                <h2>DUMMY <br> PRODUCTS</h2>
+                <h2>DUMMY <span>STORE</span></h2>
             </div>
 
-            <!-- RIGHT SIDE -->
-             <div class="right-side">
-                <div class="nav-links">
-                    <a href="#">Home</a>
-                    <a href="#Categories">Categories</a>
-                    <a href="#Deals">Deals</a>
-                    <a href="#About">About</a>
-                </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Categories</a>
+                <a href="#">Deals</a>
+                <a href="cart.html" class="cart-link">
+                    🛒 Cart
+                    <span id="cartCount">0</span>
+                </a>
+            </div>
 
-                <div class="nav-icon">
-
-                </div>
-             </div>
-             
         </nav>
     </header>
 
     <div id="productsGrid" class="grid">
 
     </div>
+
+    <footer id="footer">
+        <h3>Dummy Store</h3>
+        <p>
+            Built with HTML, CSS and JavaScript by Caleb Adelaja.
+        </p>
+    </footer>
     <script src="dummyApi.js"></script>
+    <!-- <script src="cart.js"></script> -->
 </body>
 </html>
