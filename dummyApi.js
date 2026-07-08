@@ -59,6 +59,7 @@ async function fetchProducts() {
                         ...selectedProduct,
                         quantity: 1
                     };
+                    console.log(newProduct);
                     const productExist = cart.find((item) => {
                         console.log(item)
                         console.log(item.id)
