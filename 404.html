@@ -38,5 +38,11 @@
         </div>
 
     </div>
+    <script>
+        const savedTheme = localStorage.getItem('darkMode')
+       if(savedTheme === "dark") {
+            document.body.classList.add('dark')
+        }
+    </script>
 </body>
 </html>

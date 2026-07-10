@@ -1,7 +1,25 @@
 const productsGrid = document.getElementById('productsGrid')
 const navBar = document.getElementById('navBar');
-const footer =document.getElementById('footer')
+const footer = document.getElementById('footer')
 const cartCount = document.getElementById('cartCount')
+const loader = document.getElementById('loader')
+const loadingText = document.getElementById('loadingText')
+
+const modeControl = document.querySelector('.mode-control');
+const Body = document.body;
+if (localStorage.getItem('darkMode') === 'dark') {
+    Body.classList.add('dark');
+}
+        
+modeControl.addEventListener('click', () => {
+    Body.classList.toggle('dark');       
+            
+    if (Body.classList.contains('dark')) {
+            localStorage.setItem('darkMode', 'dark');
+    } else {
+        localStorage.setItem('darkMode', 'white');
+    }
+});
 
 const cart = JSON.parse(localStorage.getItem("cart")) || [];      
 updateCartCount()
@@ -10,10 +28,17 @@ let products = [];//This is a global scope variable
 console.log(products)
 async function fetchProducts() {
     try {
+        loader.style.display = 'flex'
+        loadingText.classList.add('show')
+        footer.style.display = 'none'
         let response = await fetch('https://dummyjson.com/products')
         console.log(response)
         if(!response.ok) {
-            throw new Error("Fail to create display products")
+            throw new Error("Fail to load product")
+        }else {
+            loader.style.display = 'none'
+            loadingText.classList.remove('show')
+            footer.style.display = 'block'
         }
         let productData = await response.json();
         console.log(productData)
@@ -86,6 +111,8 @@ async function fetchProducts() {
         console.log(products)
 
     } catch (error) {
+        loader.style.display = 'none'
+        loadingText.classList.remove('show')
         productsGrid.classList.remove("grid");
         productsGrid.classList.add("error-page");
         navBar.style.display = 'none'

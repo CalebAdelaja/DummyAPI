@@ -1,6 +1,9 @@
 const cartContainer = document.getElementById('cartContainer')
 
-
+const savedTheme = localStorage.getItem('darkMode')
+if(savedTheme === "dark") {
+    document.body.classList.add('dark')
+}
 const carts = JSON.parse(localStorage.getItem("cart")) || []
 function displayCart() {
     cartContainer.innerHTML = "";
