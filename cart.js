@@ -58,11 +58,11 @@ function displayCart() {
 
     plusBtn.forEach((button) => {
         button.addEventListener("click", (event) => {
-            console.log(event.target)
+            // console.log(event.target)
             const productId = Number(event.target.dataset.id)
-            console.log(productId)
+            // console.log(productId)
             const cartItem = carts.find((item) => item.id === productId)
-            console.log(cartItem)
+            // console.log(cartItem)
             if(cartItem) {
                 cartItem.quantity++;
                 localStorage.setItem("cart", JSON.stringify(carts));
@@ -73,9 +73,9 @@ function displayCart() {
     
     minusBtn.forEach((button) => {
         button.addEventListener("click", (event) => {
-            console.log(event.target)
+            // console.log(event.target)
             const productId = Number(event.target.dataset.id)
-            console.log(productId)
+            // console.log(productId)
             const cartItem = carts.find((item) => item.id === productId)
             if(cartItem && cartItem.quantity > 1) {
                 cartItem.quantity--;
@@ -90,38 +90,28 @@ function displayCart() {
     const removeCartbtn = document.querySelectorAll('.remove-btn')
     removeCartbtn.forEach((button) =>{
         button.addEventListener("click", (event) => {
-            console.log(event.target)
+            // console.log(event.target)
             const productId = Number(event.target.dataset.id)
-            console.log(productId)//
+            // console.log(productId)//
             const cartIndex = carts.findIndex((item) => {
-                console.log(item)
-                console.log(item.id)// 1 
+                // console.log(item)
+                // console.log(item.id)// 1 
                 return item.id === productId;
             })
-            console.log(cartIndex)// How can this is 0 the output? I return the index of the position of the item in the array
+            //console.log(cartIndex)// How can this is 0 the output? I return the index of the position of the item in the array
             carts.splice(cartIndex, 1);
-            console.log(carts)
-            console.log(cartIndex)
+            // console.log(carts)
+            // console.log(cartIndex)
             localStorage.setItem("cart", JSON.stringify(carts));
             displayCart()
         })
     })
 
     function totalPrice(){
-        
-
         const totalPrice = document.getElementById("totalPrice");
         const total = carts.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
-        console.log(total);
-        // const totalPriceContainer = document.getElementById("totalPrice");
-
-        // totalPriceContainer.innerHTML = `<h2>Total Price: $${total.toFixed(2)}</h2>`;
-
+        // console.log(total);
         totalPrice.innerHTML = `<h2>Total Price: $${total.toFixed(2)}</h2>`
-        // const totalPriceElement = document.createElement('div');
-        // totalPriceElement.classList.add("totalPrice");
-        // totalPriceElement.innerHTML = `<h2>Total Price: $${total.toFixed(2)}</h2>`;
-        // cartContainer.appendChild(totalPriceElement);
     }
     totalPrice()
     
