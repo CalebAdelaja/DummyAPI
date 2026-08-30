@@ -9,7 +9,7 @@
     --bg-secondary: #f7f7f7;
     --text: #222222;
     --text-muted: #666666;
-    /* --navbar-bg: #ffffff;
+    --navbar-bg: #ffffff;
     --navbar-border: #e5e5e5;
     --logo-text: #222222;
     --logo-accent: #4f46e5;
@@ -17,7 +17,7 @@
     --card-bg: #ffffff;
     --card-border: #e5e5e5;
     --shadow: rgba(0, 0, 0, 0.08);
-    --mode-icon-color: #000000; */
+    --mode-icon-color: #000000;
 }
 
 body {
