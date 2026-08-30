@@ -27,8 +27,8 @@
 
         <div class="buttons">
 
-            <a href="#" class="home-btn">
-                Return Home
+            <a href="#" class="home-btn" id="reloadBtn">
+                Reload Page
             </a>
 
             <a href="#" class="support-btn">
@@ -40,7 +40,7 @@
     </div>
     <script>
         const savedTheme = localStorage.getItem('darkMode')
-       if(savedTheme === "dark") {
+        if(savedTheme === "dark") {
             document.body.classList.add('dark')
         }
     </script>
