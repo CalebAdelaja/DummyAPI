@@ -1,25 +1,17 @@
-const Body = document.body;
 const productsGrid = document.getElementById('productsGrid');
 const navBar = document.getElementById('navBar');
 const footer = document.getElementById('footer');
 const cartCount = document.getElementById('cartCount');
+const resultsCount = document.getElementById('resultsCount');
 const loader = document.getElementById('loader');
 const loadingText = document.getElementById('loadingText');
-const modeControl = document.querySelector('.mode-control');
 
-if (localStorage.getItem('darkMode') === 'dark') {
-    Body.classList.add('dark');
+const savedTheme = localStorage.getItem('darkMode')
+if(savedTheme === "dark") {
+    document.body.classList.add('dark')
+}else {
+    
 }
-        
-modeControl.addEventListener('click', () => {
-    Body.classList.toggle('dark');       
-            
-    if (Body.classList.contains('dark')) {
-        localStorage.setItem('darkMode', 'dark'); 
-    } else {
-        localStorage.setItem('darkMode', 'white');
-    }
-});
 
 const cart = JSON.parse(localStorage.getItem("cart")) || [];      
 updateCartCount()
@@ -43,6 +35,7 @@ async function fetchProducts() {
         let productData = await response.json();
         // console.log(productData)
         products = productData.products;
+        resultsCount.textContent = `${products.length} products`;
         // console.log(typeof products)
         // console.log(products)
         // console.log(productData.products)
@@ -78,7 +71,6 @@ async function fetchProducts() {
                         // console.log(item.id)
                         return item.id === productId;
                     });
-                    // selectedProduct.quantity = 1;
                     // console.log(selectedProduct)
                     const newProduct = {
                         ...selectedProduct,
@@ -97,8 +89,7 @@ async function fetchProducts() {
                         // selectedProduct.quantity = 1;
                         cart.push(newProduct);
                     }
-                    
-                    
+                     
                     localStorage.setItem("cart", JSON.stringify(cart));
                     updateCartCount()
                     // cartCount.textContent = cart.length;

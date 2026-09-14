@@ -3,20 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dummy Api</title>
+    <title>Dummy Store — Shop Smarter</title>
     <link rel="stylesheet" href="homestyle.css">
-    <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Playfair Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
-<style>
-    
-</style>
 <body>
+
+    <!-- TOP TICKER -->
+    <div class="top-ticker">
+        <div class="ticker-track">
+            <span>Free Shipping Over $50</span>
+            <span>New Arrivals Every Week</span>
+            <span>30-Day Easy Returns</span>
+            <span>Secure Checkout</span>
+            <span>Free Shipping Over $50</span>
+            <span>New Arrivals Every Week</span>
+            <span>30-Day Easy Returns</span>
+            <span>Secure Checkout</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
     <header id="navBar">
         <nav>
-
             <div class="logo">
                 <h2>DUMMY <span>STORE</span></h2>
             </div>
@@ -30,40 +45,120 @@
                     <i class="fa-solid fa-moon"></i>
                 </button>
                 <a href="cart.html" class="cart-link">
-                    🛒 Cart
+                    <i class="fa-solid fa-cart-shopping"></i>
                     <span id="cartCount">0</span>
                 </a>
             </div>
-
         </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
-
         <div class="hero-content">
+            <div class="hero-eyebrow">New Collection 2025</div>
 
-            <h1>Discover Amazing Products</h1>
-
+            <h1>ShopLive <em>Smarter</em> Better</h1>
             <p>
-                Shop quality products from different categories at affordable prices.
+                Quality products across beauty, furniture, fragrances and
+                groceries. Curated for people who care about the details.
             </p>
 
-            <a href="#productsGrid" class="shop-btn">
-                Shop Now
-            </a>
-
+            <div class="hero-actions">
+                <a href="#productsGrid" class="shop-btn">Shop Now</a>
+                <a href="product.html" class="hero-secondary-btn">View All</a>
+            </div>
         </div>
 
+        <div class="hero-visual">
+            <div class="hero-card hero-card-main">
+                <img src="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp" alt="Featured">
+                <div class="card-tag">Featured</div>
+                <h4>Essence Mascara Lash Princess</h4>
+                <div class="price">$9.99</div>
+            </div>
+
+            <div class="hero-card hero-card-mini hero-card-top">
+                <img src="https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp" alt="Product">
+                <p>CK One</p>
+                <span>$49.99</span>
+            </div>
+
+            <div class="hero-card hero-card-mini hero-card-bottom">
+                <img src="https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/thumbnail.webp" alt="Product">
+                <p>Annibale Bed</p>
+                <span>$189.99</span>
+            </div>
+        </div>
     </section>
 
-    <section class="search-section">
+    <!-- BRAND STRIP -->
+    <div class="brand-strip">
+        <div class="brand-strip-inner">
+            <span>Beauty</span>
+            <span>Furniture</span>
+            <span>Fragrances</span>
+            <span>Groceries</span>
+            <span>Home</span>
+            <span>Kitchen</span>
+            <span>Beauty</span>
+            <span>Furniture</span>
+            <span>Fragrances</span>
+            <span>Groceries</span>
+            <span>Beauty</span>
+            <span>Furniture</span>
+            <span>Fragrances</span>
+            <span>Groceries</span>
+            <span>Home</span>
+            <span>Kitchen</span>
+            <span>Beauty</span>
+            <span>Furniture</span>
+            <span>Fragrances</span>
+            <span>Groceries</span>
+        </div>
+    </div>
+
+    <!-- TRUST BAR -->
+    <section class="trust-bar">
+        <div class="trust-item">
+            <div class="trust-icon">🚚</div>
+            <div class="trust-text">
+                <h4>Free Shipping</h4>
+                <p>On all orders over $50</p>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">↩️</div>
+            <div class="trust-text">
+                <h4>Easy Returns</h4>
+                <p>30-day return policy</p>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">🔒</div>
+            <div class="trust-text">
+                <h4>Secure Payment</h4>
+                <p>100% protected checkout</p>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">💬</div>
+            <div class="trust-text">
+                <h4>24/7 Support</h4>
+                <p>Always here to help</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH -->
+    <!-- <section class="search-section">
         <input
             type="text"
             id="searchInput"
             placeholder="Search products..."
         >
-    </section>
+    </section> -->
 
+    <!-- CATEGORIES -->
     <section class="category-buttons">
         <button>All</button>
         <button>Beauty</button>
@@ -72,34 +167,104 @@
         <button>Groceries</button>
     </section>
 
+    <!-- PRODUCTS HEADER -->
     <div class="product-header">
-        <h2>Our Products</h2>
-
+        <h2>Trending</h2>
         <a href="product.html" id="productCount" class="product-link">
             Showing 30 Products
         </a>
     </div>
 
+    <!-- PRODUCTS GRID — populated by dummyApi.js -->
     <div id="productsGrid" class="grid">
-        <!-- Display some product fectched like five is good -->
+        <!-- dummyApi.js injects product cards here -->
+        <div id="loader" class="loader">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+            <div class="bar6"></div>
+            <div class="bar7"></div>
+            <div class="bar8"></div>
+            <div class="bar9"></div>
+            <div class="bar10"></div>
+            <div class="bar11"></div>
+            <div class="bar12"></div>
+
+            <div id="loadingText" class="loading-text">
+                <h3>Loading Products..</h3>
+            </div>
+        </div>
     </div>
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-inner">
 
-    <footer>
+            <div class="footer-grid">
 
-        <h3>Dummy Store</h3>
+                <!-- BRAND COLUMN -->
+                <div class="footer-brand">
+                    <h3>DUMMY <span>STORE</span></h3>
+                    <p>
+                        Your go-to shop for quality products across every
+                        category. Built with passion.
+                    </p>
 
-        <p>
-            Built with HTML, CSS and JavaScript by Caleb Adelaja.
-        </p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
 
+                <!-- LINK COLUMNS -->
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <a href="product.html">All Products</a>
+                    <a href="#">Beauty</a>
+                    <a href="#">Furniture</a>
+                    <a href="#">Fragrances</a>
+                    <a href="#">Groceries</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                    <a href="#">Blog</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Track Order</a>
+                </div>
+
+            </div>
+
+            <!-- BOTTOM BAR -->
+            <div class="footer-bottom">
+                <p>© 2026 Dummy Store. Built by Caleb Adelaja.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+
+        </div>
     </footer>
-    <!-- <script src="cart.js"></script> -->
-     <script>
-        const savedTheme = localStorage.getItem('darkMode')
-        if(savedTheme === "dark") {
-            document.body.classList.add('dark')
-        }
-     </script>
-     <script src="https://kit.fontawesome.com/b2618eae9a.js" crossorigin="anonymous"></script>
+
+    <script src="home.js"></script>
+    <script src="https://kit.fontawesome.com/b2618eae9a.js" crossorigin="anonymous"></script>
 </body>
 </html>

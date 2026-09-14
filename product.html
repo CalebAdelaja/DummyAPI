@@ -30,13 +30,56 @@
                     <i class="fa-solid fa-moon"></i>
                 </button>
                 <a href="cart.html" class="cart-link">
-                    🛒 Cart
+                    <i class="fa-solid fa-cart-shopping"></i>
                     <span id="cartCount">0</span>
                 </a>
             </div>
 
         </nav>
     </header>
+
+    <!-- SHOP TOOLBAR -->
+    <section class="shop-toolbar">
+        <div class="shop-toolbar-inner">
+
+            <!-- SEARCH -->
+            <div class="shop-search">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products, brands, categories..."
+                >
+            </div>
+
+            <!-- CATEGORY FILTERS -->
+            <div class="shop-categories">
+                <button class="cat-btn active">All</button>
+                <button class="cat-btn">Beauty</button>
+                <button class="cat-btn">Furniture</button>
+                <button class="cat-btn">Fragrances</button>
+                <button class="cat-btn">Groceries</button>
+                <button class="cat-btn">Home</button>
+                <button class="cat-btn">Kitchen</button>
+            </div>
+
+            <!-- RESULTS + SORT -->
+            <div class="shop-meta">
+                <span class="results-count" id="resultsCount">30 products</span>
+
+                <div class="sort-wrap">
+                    <label for="sortSelect">Sort by</label>
+                    <select id="sortSelect">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                        <option value="title">A → Z</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <div id="loader" class="loader">
         <div class="bar1"></div>
