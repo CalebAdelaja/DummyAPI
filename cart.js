@@ -27,6 +27,8 @@ function displayCart() {
             </div>
         `;
 
+        totalPrice.innerHTML = `<h3> Total Price: - </h3>`
+
         return;
     }else {
         carts.forEach((cart) => {
@@ -41,7 +43,7 @@ function displayCart() {
             }
             
             cartCount.innerHTML = getCartCount()
-            
+
             cartCard.innerHTML = `
             <img src="${cart.thumbnail}" alt="${cart.title}">
             <div class="product-info">
@@ -124,7 +126,7 @@ function displayCart() {
     function updateTotalPrice(){
         const total = carts.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
         // console.log(total);
-        totalPrice.innerHTML = `<h2>Total Price - $${total.toFixed(2)}</h2>`
+        totalPrice.innerHTML = `<h3>Total Price - $${total.toFixed(2)}</h3>`
     }
     updateTotalPrice()
     
