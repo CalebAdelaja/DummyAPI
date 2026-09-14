@@ -1,9 +1,20 @@
 const cartContainer = document.getElementById('cartContainer')
+const totalPrice = document.getElementById("totalPrice");
+const cartCount = document.getElementById('cartCount');
+const modeControl = document.querySelector('.mode-control');
 
 const savedTheme = localStorage.getItem('darkMode')
 if(savedTheme === "dark") {
     document.body.classList.add('dark')
 }
+
+modeControl.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    localStorage.setItem(
+        'darkMode',
+        document.body.classList.contains('dark') ? 'dark' : 'white'
+    );
+});
 
 const carts = JSON.parse(localStorage.getItem("cart")) || []
 function displayCart() {
@@ -23,12 +34,14 @@ function displayCart() {
             console.log(carts.length)
             const cartCard = document.createElement('div')
             cartCard.classList.add('product-card');
-            // function getCartCount() {
-            //     const cartCount = carts
-            //     return cartCount.reduce((acc, curr) => acc + curr.quantity, 0)
-            // }
-            // const logCartCount = getCartCount()
-            // console.log(logCartCount)
+
+            function getCartCount() {
+                const cartCount = carts
+                return cartCount.reduce((acc, curr) => acc + curr.quantity, 0)
+            }
+            
+            cartCount.innerHTML = getCartCount()
+            
             cartCard.innerHTML = `
             <img src="${cart.thumbnail}" alt="${cart.title}">
             <div class="product-info">
@@ -108,13 +121,12 @@ function displayCart() {
         })
     })
 
-    function totalPrice(){
-        const totalPrice = document.getElementById("totalPrice");
+    function updateTotalPrice(){
         const total = carts.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
         // console.log(total);
-        totalPrice.innerHTML = `<h2>Total Price: $${total.toFixed(2)}</h2>`
+        totalPrice.innerHTML = `<h2>Total Price - $${total.toFixed(2)}</h2>`
     }
-    totalPrice()
+    updateTotalPrice()
     
 }
 

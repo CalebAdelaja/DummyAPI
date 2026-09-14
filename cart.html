@@ -3,36 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
+    <title>Cart — Dummy Store</title>
     <link rel="stylesheet" href="cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<style>
-    
-</style>
 <body>
+
+    <!-- TOP TICKER -->
+    <!-- <div class="top-ticker">
+        <div class="ticker-track">
+            <span>Free Shipping Over $50</span>
+            <span>New Arrivals Every Week</span>
+            <span>30-Day Easy Returns</span>
+            <span>Secure Checkout</span>
+            <span>Free Shipping Over $50</span>
+            <span>New Arrivals Every Week</span>
+            <span>30-Day Easy Returns</span>
+            <span>Secure Checkout</span>
+        </div>
+    </div> -->
+
+    <!-- NAVBAR -->
     <header id="navBar">
         <nav>
             <div class="logo">
-                <h2>DUMMY <span>CART</span></h2>
+                <h2>DUMMY <span>STORE</span></h2>
             </div>
 
-            <div class="nav-links">
-                <a href="index.html">← Continue Shopping</a>
+            <div class="nav-primary">
+                <a href="index.html">Home</a>
+                <a href="product.html">Products</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="#" class="nav-action-link">
+                    <i class="fa-solid fa-store"></i> Sell
+                </a>
+                <a href="#" class="nav-action-link">
+                    <i class="fa-regular fa-user"></i> Seller Login
+                </a>
+                <a href="#" class="nav-action-link">
+                    <i class="fa-regular fa-user"></i> My Account
+                </a>
+                <button class="mode-control">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="cart.html" class="cart-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cartCount">0</span>
+                </a>
             </div>
         </nav>
     </header>
 
-    <main>
-        <h1>Your Cart</h1>
+    <!-- CART HEADER -->
+    <section class="cart-header">
+        <div class="cart-header-inner">
+            <div class="cart-header-left">
+                <h1>Your Cart</h1>
+                <p>Review your items before checkout.</p>
+            </div>
 
-        <div id="cartContainer">
-  
+            <a href="product.html" class="continue-shopping">
+                ← Continue Shopping
+            </a>
         </div>
-        <div id="totalPrice"></div>
+    </section>
+
+    <!-- CART MAIN -->
+    <main class="cart-main">
+
+        <!-- LEFT: items + total -->
+        <div class="cart-left">
+            <div id="cartContainer" class="cart-grid">
+                <!-- cart.js injects product cards here -->
+            </div>
+        </div>
+
+        <!-- RIGHT: order summary -->
+        <aside class="cart-summary">
+            <h3>Order Summary</h3>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>See items</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span class="free-tag">Free</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Tax</span>
+                <span>At checkout</span>
+            </div>
+
+             <div id="totalPrice" class="cart-total">
+                <!-- cart.js injects total here -->
+            </div>
+
+            <a href="#" class="checkout-btn">
+                Proceed to Checkout →
+            </a>
+
+            <div class="summary-perks">
+                <div class="perk">
+                    <span>🔒</span>
+                    <p>Secure checkout</p>
+                </div>
+                <div class="perk">
+                    <span>↩️</span>
+                    <p>30-day returns</p>
+                </div>
+                <div class="perk">
+                    <span>🚚</span>
+                    <p>Free shipping over $50</p>
+                </div>
+            </div>
+        </aside>
+
     </main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-inner">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <h3>DUMMY <span>STORE</span></h3>
+                    <p>
+                        Your go-to shop for quality products across every
+                        category. Built with passion.
+                    </p>
+
+                    <div class="footer-socials">
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <a href="product.html">All Products</a>
+                    <a href="#">Beauty</a>
+                    <a href="#">Furniture</a>
+                    <a href="#">Fragrances</a>
+                    <a href="#">Groceries</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                    <a href="#">Blog</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Track Order</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Dummy Store. Built by Caleb Adelaja.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
     <script src="cart.js"></script>
+    <script src="https://kit.fontawesome.com/b2618eae9a.js" crossorigin="anonymous"></script>
 </body>
 </html>
