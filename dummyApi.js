@@ -145,9 +145,13 @@ async function fetchProducts() {
 }
 
 function updateCartCount() {
-    // cartCount.textContent = cart.length;
-    cartCount.textContent = cart.reduce((acc, curr) => acc + curr.quantity, 0); 
-    
+    const totalItems = cart.reduce(
+        (acc, curr) => acc + curr.quantity,
+        0
+    );
+
+    cartCount.textContent = totalItems;
+    cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
 }
 
 
