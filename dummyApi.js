@@ -5,17 +5,38 @@ const cartCount = document.getElementById('cartCount');
 const resultsCount = document.getElementById('resultsCount');
 const loader = document.getElementById('loader');
 const loadingText = document.getElementById('loadingText');
+const shopToolbar = document.getElementById('shopToolbar')
+const modeControl = document.querySelector('.mode-control')
+const modeIcon = modeControl.querySelector('i')
 
 const savedTheme = localStorage.getItem('darkMode')
 if(savedTheme === "dark") {
     document.body.classList.add('dark')
-}else {
-    
 }
 
-const cart = JSON.parse(localStorage.getItem("cart")) || [];      
+function updateThemeIcon() {
+    const isDarkMode = document.body.classList.contains('dark')
+    modeIcon.classList.toggle('fa-moon', !isDarkMode)
+    modeIcon.classList.toggle('fa-sun', isDarkMode)
+}
+
+modeControl.addEventListener('click', () => {
+    document.body.classList.toggle('dark')
+    localStorage.setItem(
+        'darkMode',
+        document.body.classList.contains('dark') ? 'dark' : 'white'
+    )
+    updateThemeIcon()
+})
+
+updateThemeIcon()
+
+const cart = JSON.parse(localStorage.getItem("cart")) || [];    
+if(cart.length === 0) {
+    cartCount.style.display = 'none'
+}  
 updateCartCount()
-// cartCount.textContent = cart.length;
+
 let products = []; //This is a global scope variable 
 // console.log(products)
 async function fetchProducts() {
@@ -107,13 +128,14 @@ async function fetchProducts() {
         productsGrid.classList.remove("grid");
         productsGrid.classList.add("error-page");
         navBar.style.display = 'none'
+        shopToolbar.style.display = 'none'
         footer.style.display = 'none'
         let response = await fetch('404.html')
-        console.log(response)
+        // console.log(response)
         let errorPage = await response.text()
-        console.log(errorPage)
+        // console.log(errorPage)
         productsGrid.innerHTML = errorPage;
-        console.log(productsGrid)
+        // console.log(productsGrid)
         const reloadBtn = document.getElementById("reloadBtn");
         reloadBtn.addEventListener("click", () => {
             location.reload();
@@ -125,6 +147,8 @@ async function fetchProducts() {
 function updateCartCount() {
     // cartCount.textContent = cart.length;
     cartCount.textContent = cart.reduce((acc, curr) => acc + curr.quantity, 0); 
+    
 }
+
 
 fetchProducts()

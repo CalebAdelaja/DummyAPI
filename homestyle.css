@@ -334,7 +334,8 @@ nav {
     transform: rotate(15deg);
 }
 
-.fa-moon {
+.fa-moon,
+.fa-sun {
     color: var(--mode-icon-color);
     font-size: 18px;
     transition: color 0.35s ease;

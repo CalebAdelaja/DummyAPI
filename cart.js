@@ -2,10 +2,17 @@ const cartContainer = document.getElementById('cartContainer')
 const totalPrice = document.getElementById("totalPrice");
 const cartCount = document.getElementById('cartCount');
 const modeControl = document.querySelector('.mode-control');
+const modeIcon = modeControl.querySelector('i');
 
 const savedTheme = localStorage.getItem('darkMode')
 if(savedTheme === "dark") {
     document.body.classList.add('dark')
+}
+
+function updateThemeIcon() {
+    const isDarkMode = document.body.classList.contains('dark');
+    modeIcon.classList.toggle('fa-moon', !isDarkMode);
+    modeIcon.classList.toggle('fa-sun', isDarkMode);
 }
 
 modeControl.addEventListener('click', () => {
@@ -14,11 +21,19 @@ modeControl.addEventListener('click', () => {
         'darkMode',
         document.body.classList.contains('dark') ? 'dark' : 'white'
     );
+    updateThemeIcon();
 });
 
-const carts = JSON.parse(localStorage.getItem("cart")) || []
+updateThemeIcon();
+
+const carts = JSON.parse(localStorage.getItem("cart")) || [];
 function displayCart() {
     cartContainer.innerHTML = "";
+    function getCartCount() {
+        const cartCount = carts;
+        return cartCount.reduce((acc, curr) => acc + curr.quantity, 0);
+    }           
+    cartCount.innerHTML = getCartCount();
     if(carts.length === 0) {
         cartContainer.innerHTML = `
             <div class="empty-cart">
@@ -26,23 +41,16 @@ function displayCart() {
                 <p>Add some products first.</p>
             </div>
         `;
-
-        totalPrice.innerHTML = `<h3> Total Price: - </h3>`
-
+        cartCount.style.display = 'none'
+        totalPrice.innerHTML = `<h3> Total Price: - </h3>`;
+        
         return;
     }else {
         carts.forEach((cart) => {
-            console.log(cart)
-            console.log(carts.length)
             const cartCard = document.createElement('div')
             cartCard.classList.add('product-card');
 
-            function getCartCount() {
-                const cartCount = carts
-                return cartCount.reduce((acc, curr) => acc + curr.quantity, 0)
-            }
             
-            cartCount.innerHTML = getCartCount()
 
             cartCard.innerHTML = `
             <img src="${cart.thumbnail}" alt="${cart.title}">
@@ -114,7 +122,7 @@ function displayCart() {
                 // console.log(item.id)// 1 
                 return item.id === productId;
             })
-            //console.log(cartIndex)// How can this is 0 the output? I return the index of the position of the item in the array
+            // console.log(cartIndex)
             carts.splice(cartIndex, 1);
             // console.log(carts)
             // console.log(cartIndex)
