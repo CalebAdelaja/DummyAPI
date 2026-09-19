@@ -32,9 +32,9 @@ modeControl.addEventListener('click', () => {
 updateThemeIcon()
 
 const cart = JSON.parse(localStorage.getItem("cart")) || [];    
-if(cart.length === 0) {
-    cartCount.style.display = 'none'
-}  
+// if(cart.length === 0) {
+//     cartCount.style.display = 'none'
+// }  
 updateCartCount()
 
 let products = []; //This is a global scope variable 
@@ -145,13 +145,15 @@ async function fetchProducts() {
 }
 
 function updateCartCount() {
-    const totalItems = cart.reduce(
-        (acc, curr) => acc + curr.quantity,
-        0
-    );
+    const totalItems = cart.reduce((acc, curr) => acc + curr.quantity,0);
 
     cartCount.textContent = totalItems;
-    cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+    if(totalItems > 0){
+        cartCount.style.display = 'flex'
+    }else {
+        cartCount.style.display = 'none'
+    }
+    // cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
 }
 
 
