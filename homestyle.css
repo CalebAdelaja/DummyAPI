@@ -169,7 +169,8 @@ nav {
     justify-content: flex-end;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-primary a {
     text-decoration: none;
     color: var(--navbar-text);
     font-family: 'Inter', sans-serif;
@@ -182,9 +183,11 @@ nav {
     transition: all 0.2s ease;
     position: relative;
     white-space: nowrap;
+    display: inline-block;
 }
 
-.nav-links a::before {
+.nav-links a::before,
+.nav-primary a::before {
     content: '';
     position: absolute;
     bottom: 6px;
@@ -196,13 +199,14 @@ nav {
     transform: translateX(-50%);
 }
 
-.nav-links a:hover::before {
+.nav-links a:hover::before,
+.nav-primary a:hover::before {
     width: 60%;
 }
 
-.nav-links a:hover {
+/* .nav-links a:hover {
     color: var(--accent);
-}
+} */
 
 .nav-primary {
     display: flex;
@@ -229,7 +233,7 @@ nav {
 .nav-primary a:hover,
 .nav-action-link:hover {
     color: var(--accent);
-}
+} 
 
 .nav-actions {
     display: flex;
